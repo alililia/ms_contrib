@@ -85,12 +85,6 @@ dataset
 
 Example: SYSU-MM01 dataset training and all search inference
 
-On :
-
-```shell
-cd MVD/scripts/ # please enter this path before sh XXX.sh, otherwise path errors :)
-bash run_standalone_train_sysu_.sh [DATASET_PATH] [CHECKPOINT_PATH] [SYSU_MODE] [DEVICE_ID]
-```
 
 On Ascend:
 
