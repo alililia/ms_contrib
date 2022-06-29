@@ -178,12 +178,7 @@ For more detailed and comprehensive arguments description, please refer to `trai
 
 ## Training Process
 
-For :
 
-```shell
-cd MVD/scripts/ # please enter this path before sh XXX.sh, otherwise path errors :)
-bash run_standalone_train_sysu_.sh [DATASET_PATH] [CHECKPOINT_PATH] [SYSU_MODE] [DEVICE_ID]
-```
 
 For Ascend：
 
@@ -209,12 +204,7 @@ At the end of every epoch training, `train.py` will use a random testing set (di
 
 ## Evaluation Process
 
-On ：
 
-```shell
-cd MVD/scripts/ # please enter this path before sh XXX.sh, otherwise path errors :)
-bash run_eval_sysu_.sh [DATASET_PATH] [CHECKPOINT_PATH] [SYSU_MODE] [DEVICE_ID]
-```
 
 On Ascend:
 
@@ -238,37 +228,37 @@ After running `bash run_eval_XXX.sh [DATASET_PATH] [CHECKPOINT_PATH]`, you will 
 
 ## Training Performance
 
-| Parameters                 | Ascend 910                                                   | (RTX Titan) |
-| -------------------------- | ------------------------------------------------------------ | ----------------------------------------------|
-| Model Version              | MVD: baseline + modal specific & modal share backbone + VIB | MVD: baseline + modal specific & modal share backbone + VIB |
-| Resource                   | Ascend 910; CPU 2.60GHz, 192cores; Memory 755G; OS Euler2.8  |  NVIDIA RTX Titan-24G        |
-| uploaded Date              | 12/19/2021 (month/day/year)                 | 12/19/2021 (month/day/year)          |
-| MindSpore Version          | 1.3.0, 1.5.0                                             | 1.3.0, 1.5.0                                  |
-| Dataset                    | SYSU-MM01, RegDB                              | SYSU-MM01, RegDB           |
-| Training Parameters（SYSU-MM01） | Epochs=80, steps per epoch=695, batch_size = 64 | epoch=80, steps per epoch=64 batch_size = 64 |
-| Training Parameters（RegDB） | Epochs=80, steps per epoch=695, batch_size = 64 | epoch=80, steps per epoch=64 batch_size = 64 |
-| Optimizer                  | Adam                                                 | Adam                                  |
-| Loss Function              | Softmax Cross Entropy + Triplet Loss                         | Softmax Cross Entropy + Triplet Loss          |
-| outputs                    | feature vector + probability                              | feature vector + probability               |
+| Parameters                 | Ascend 910                                                   | 
+| -------------------------- | ------------------------------------------------------------ | 
+| Model Version              | MVD: baseline + modal specific & modal share backbone + VIB | 
+| Resource                   | Ascend 910; CPU 2.60GHz, 192cores; Memory 755G; OS Euler2.8  | 
+| uploaded Date              | 12/19/2021 (month/day/year)                 | 
+| MindSpore Version          | 1.3.0, 1.5.0                                             | 
+| Dataset                    | SYSU-MM01, RegDB                              | 
+| Training Parameters（SYSU-MM01） | Epochs=80, steps per epoch=695, batch_size = 64 | 
+| Training Parameters（RegDB） | Epochs=80, steps per epoch=695, batch_size = 64 | 
+| Optimizer                  | Adam                                                 | 
+| Loss Function              | Softmax Cross Entropy + Triplet Loss                         | 
+| outputs                    | feature vector + probability                              | 
 | Loss                       | 1.7161                                     |  2.0663      |
-| Speed                      | 830 ms/step (1pcs, PyNative Mode)               | 940ms/step (1pcs, PyNative Mode) |
-| Total time                 | SYSU(1pcs, PyNative Mode) : about  13h; RegDB: about 3h30min | SYSU(1pcs, PyNative Mode) : about  14h; RegDB: about 4hmin |
-| Parameters (M)             | 161.9M                                     | 161.9M                        |
-| Checkpoint for Fine tuning | 329.2M (.ckpt file)                                     | 329.2M (.ckpt file)                     |
-| Scripts                    | [link](https://gitee.com/mindspore/models/tree/master/research/cv/MVD) ||
+| Speed                      | 830 ms/step (1pcs, PyNative Mode)               | 
+| Total time                 | SYSU(1pcs, PyNative Mode) : about  13h; RegDB: about 3h30min | 
+| Parameters (M)             | 161.9M                                     | 
+| Checkpoint for Fine tuning | 329.2M (.ckpt file)                                     | 
+| Scripts                    | [link](https://gitee.com/mindspore/models/tree/master/research/cv/MVD) |
 
 ## Evaluation Performance
 
-| Parameters        | Ascend                                                      | (RTX Titan)                                              |
-| ----------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| Model Version     | MVD: baseline + modal specific & modal share backbone + VIB | MVD: baseline + modal specific & modal share backbone + VIB |
-| Resource          | Ascend 910; OS Euler2.8                                     | NVIDIA RTX Titan-24G                                        |
-| Uploaded Date     | 12/19/2021 (month/day/year)                                 | 12/19/2021 (month/day/year)                                 |
-| MindSpore Version | 1.5.0, 1.3.0                                                | 1.5.0, 1.3.0                                                |
-| Dataset           | SYSU-MM01, RegDB                                            | SYSU-MM01, RegDB                                            |
-| batch_size        | 64                                                          | 64                                                          |
-| outputs           | feature                                                     | feature                                                     |
-| Accuracy          | See following 4 tables ↓                                    |                                                             |
+| Parameters        | Ascend                                                      | 
+| ----------------- | ----------------------------------------------------------- | 
+| Model Version     | MVD: baseline + modal specific & modal share backbone + VIB |
+| Resource          | Ascend 910; OS Euler2.8                                     | 
+| Uploaded Date     | 12/19/2021 (month/day/year)                                 | 
+| MindSpore Version | 1.5.0, 1.3.0                                                |
+| Dataset           | SYSU-MM01, RegDB                                            |
+| batch_size        | 64                                                          |
+| outputs           | feature                                                     | 
+| Accuracy          | See following 4 tables ↓                                    |                                                             
 
 ## SYSU-MM01 (all-search mode)
 
@@ -286,14 +276,14 @@ After running `bash run_eval_XXX.sh [DATASET_PATH] [CHECKPOINT_PATH]`, you will 
 
 ## RegDB(Visible-Thermal)
 
-| Metric | Value(Pytorch) | Value(Mindspore, , --trial 1) | Value(Mindspore, Ascend 910, -- trial 1) |
+| Metric | Value(Pytorch) | Value(Mindspore,  --trial 1) | Value(Mindspore, Ascend 910, -- trial 1) |
 | :----: | :------------: | :------------------------------: | :--------------------------------------: |
 | Rank-1 |     73.20%     |              77.91%              |                  77.28%                  |
 |  mAP   |     71.60%     |              72.35%              |                  72.44%                  |
 
 ## RegDB(Thermal-Visible)
 
-| Metric | Value(Pytorch) | Value(Mindspore, , --trial 1) | Value(Mindspore, Ascend 910, --trial 1) |
+| Metric | Value(Pytorch) | Value(Mindspore,  --trial 1) | Value(Mindspore, Ascend 910, --trial 1) |
 | :----: | :------------: | :------------------------------: | :-------------------------------------: |
 | Rank-1 |     71.80%     |              76.50%              |                 76.07%                  |
 |  mAP   |     70.10%     |              71.37%              |                 70.37%                  |
