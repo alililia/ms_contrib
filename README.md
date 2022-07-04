@@ -71,7 +71,7 @@ dataset
 - Hardware
     - Support Ascend and  environment.
     - For Ascend: Ascend 910.
-    - For : cuda==10.1.
+    
 - Framework
     - Mindspore=1.5.0(See [Installation](https://www.mindspore.cn/install/))
 - Third Package
@@ -256,31 +256,31 @@ After running `bash run_eval_XXX.sh [DATASET_PATH] [CHECKPOINT_PATH]`, you will 
 
 ## SYSU-MM01 (all-search mode)
 
-| Metric | Value(Pytorch) | Value(Mindspore, ) | Value(Mindspore, Ascend 910) |
-| :----: | :------------: | :-------------------: | :--------------------------: |
-| Rank-1 |     60.02%     |        60.08%         |            58.64%            |
-|  mAP   |     58.80%     |        57.55%         |            57.57%            |
+| Metric | Value(Pytorch) |  Value(Mindspore, Ascend 910) |
+| :----: | :------------: |  :--------------------------: |
+| Rank-1 |     60.02%     |               58.64%            |
+|  mAP   |     58.80%     |            57.57%            |
 
 ## SYSU-MM01 (indoor-search mode)
 
-| Metric | Value(Pytorch) | Value(Mindspore, ) | Value(Mindspore, Ascend 910) |
-| :----: | :------------: | :-------------------: | :--------------------------: |
-| Rank-1 |     66.05%     |        69.57%         |            67.73%            |
-|  mAP   |     72.98%     |        73.13%         |            73.08%            |
+| Metric | Value(Pytorch) | Value(Mindspore, Ascend 910) |
+| :----: | :------------: |  :--------------------------: |
+| Rank-1 |     66.05%     |             67.73%            |
+|  mAP   |     72.98%     |             73.08%            |
 
 ## RegDB(Visible-Thermal)
 
-| Metric | Value(Pytorch) | Value(Mindspore,  --trial 1) | Value(Mindspore, Ascend 910, -- trial 1) |
-| :----: | :------------: | :------------------------------: | :--------------------------------------: |
-| Rank-1 |     73.20%     |              77.91%              |                  77.28%                  |
-|  mAP   |     71.60%     |              72.35%              |                  72.44%                  |
+| Metric | Value(Pytorch) | Value(Mindspore, Ascend 910, -- trial 1) |
+| :----: | :------------: | :--------------------------------------: |
+| Rank-1 |     73.20%     |                   77.28%                  |
+|  mAP   |     71.60%     |                    72.44%                  |
 
 ## RegDB(Thermal-Visible)
 
-| Metric | Value(Pytorch) | Value(Mindspore,  --trial 1) | Value(Mindspore, Ascend 910, --trial 1) |
-| :----: | :------------: | :------------------------------: | :-------------------------------------: |
-| Rank-1 |     71.80%     |              76.50%              |                 76.07%                  |
-|  mAP   |     70.10%     |              71.37%              |                 70.37%                  |
+| Metric | Value(Pytorch) |  Value(Mindspore, Ascend 910, --trial 1) |
+| :----: | :------------: | :-------------------------------------: |
+| Rank-1 |     71.80%     |                   76.07%                  |
+|  mAP   |     70.10%     |                  70.37%                  |
 
 ***Note**: The aforementioned pytorch results can be seen in original [pytorch repo](https://github.com/FutabaSakuraXD/Farewell-to-Mutual-Information-Variational-Distiilation-for-Cross-Modal-Person-Re-identification).
 
